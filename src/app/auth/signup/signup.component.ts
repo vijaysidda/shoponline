@@ -95,13 +95,12 @@ export class SignupComponent implements OnInit {
           type: 'success',
           title: 'Sucess',
           text: res.message,
-          footer: '<a href>Why do I have this issue?</a>'
+          // footer: '<a href>Why do I have this issue?</a>'
         })
         this.isLoading=false;
         this.router.navigate(['/login']);
       },
-      errMessage =>{
-        
+      errMessage =>{        
         this.error = errMessage;
         console.log(this.error);
         Swal.fire({
