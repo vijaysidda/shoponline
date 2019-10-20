@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <div class="Welprofile" *ngIf="!isAuthenticated">
+  <div class="Welprofile">
     <div class="greet-left">
       <div class="greet-txt slc-list">Welcome!</div>
       <div class="sb-top-nav">
@@ -26,7 +26,7 @@
     <div class="item">
       <a mat-list-item routerLink="/home&kitchen" class="item-link" (click)="onClose()">Home & Kitchen</a>
     </div>
-    <div class="item" *ngIf="isAuthenticated">
+    <div class="item">
         <a mat-list-item  class="item-link" (click)="onClose()">Logout</a>
       </div>
   </div>

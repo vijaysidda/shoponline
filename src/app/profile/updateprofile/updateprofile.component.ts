@@ -71,7 +71,7 @@ export class UpdateprofileComponent implements OnInit {
     // }
    
   }
-  
+  showChangePwd(){}
 
   onUpdate(){
     console.log(this.updateform.value);
