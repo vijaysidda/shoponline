@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileService, ProfileDataRes } from './profile.service';
 import { UserProfileRes } from '../shared/profileres.model';
+import { AuthService } from '../auth/auth.service';
+import { Subscription } from 'rxjs';
 
 export interface PeriodicElement {
   name: string;
@@ -21,12 +23,17 @@ const ELEMENT_DATA: PeriodicElement[]=[
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private router:Router, private profileService:ProfileService) { }
+
+  constructor(
+    private router:Router,
+    private profileService:ProfileService,
+    ) { }
   displayedColumns: string[] = ['name', 'weight'];
   public userres;
   dataSource=ELEMENT_DATA;
   profiledata:ProfileDataRes;
   ngOnInit() {
+    
     this.profileService.profileView().subscribe(resData =>{
       console.log(resData);
       //  this.profiledata =resData;

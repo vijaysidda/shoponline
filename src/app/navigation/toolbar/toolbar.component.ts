@@ -18,10 +18,11 @@ export class ToolbarComponent implements OnInit,OnDestroy {
 
   ngOnInit() {
    this.userSub = this.authService.user.subscribe(user =>{
+     console.log(this.isAuthenticated);
       this.isAuthenticated = !!user;
       console.log(!user);
       console.log(!!user);
-    })
+    })  
   }
 
   onSidenavToggle(){

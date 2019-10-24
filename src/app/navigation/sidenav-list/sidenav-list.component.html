@@ -2,8 +2,12 @@
   <div class="Welprofile">
     <div class="greet-left">
       <div class="greet-txt slc-list">Welcome!</div>
-      <div class="sb-top-nav">
+      <div class="sb-top-nav" *ngIf="!isAuthenticated">
         <a  mat-list-item class="sb-top-link txt-btn-def" routerLink="/login" (click)="onClose()">SIGN IN | SIGN UP </a>
+      </div>
+      <div class="sb-top-nav" *ngIf="isAuthenticated">
+        <a mat-list-item class="sb-top-link txt-btn-def"
+         routerLink="/profile" (click)="onClose()">User Profile</a>
       </div>
     </div>
     <!-- <div class="greet-right">

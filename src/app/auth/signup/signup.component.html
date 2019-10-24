@@ -107,7 +107,7 @@
     
              
               <div fxFlex gdAlignRows="center">
-                <button mat-raised-button	color="primary" type="submit">SignUp</button>
+                <button mat-raised-button	color="primary" type="submit" [disabled]="!signupForm.valid">SignUp</button>
               </div>
             </div>
           </form>

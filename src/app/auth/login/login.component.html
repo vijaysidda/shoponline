@@ -37,7 +37,7 @@
                       </mat-form-field>
                   </div>
                   <div>
-                    <button mat-raised-button	color="primary" type="submit" fxFlex>Subimt</button>
+                    <button mat-raised-button	color="primary" type="submit" [disabled]="!loginForm.valid" fxFlex>Subimt</button>
                   </div>
               </form>
               <div class="signupContainer">
