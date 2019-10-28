@@ -13,15 +13,15 @@ export class AuthInterceptorService implements HttpInterceptor {
                 if(!user){
                     return next.handle(req);
                 }
-                const modifiedReq = req.clone({
-                     headers: req.headers.set('x-access-token', this.token),
+                req = req.clone({
+                    //  headers: req.headers.set('x-access-token', this.token),
                     
                     //params: new HttpParams().set('auth', user.token)
                     // var token=localStorage.getItem('token'),
                     // let headers:HttpHeaders = new HttpHeaders(),
                     // headers = headers.append('x-access-token', token)
                 });
-                return next.handle(modifiedReq);
+                return next.handle(req);
             })
         )
 

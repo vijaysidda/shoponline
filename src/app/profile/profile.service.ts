@@ -47,12 +47,15 @@ export class ProfileService implements OnInit{
      profileView(){
         // get the token
         // const token = this.getToken();
-      //   let token =(localStorage.getItem('token'));
-      //  // console.log(token);
-      //   let headers: HttpHeaders = new HttpHeaders();
-      //   headers = headers.append('x-access-token', token)
+        let token =(localStorage.getItem('token'));
+      //  console.log(token);
+        let headers: HttpHeaders = new HttpHeaders();
+        headers = headers.append('x-access-token', token)
         
-        return this.http.get<UserProfileRes>("http://13.233.161.206:3001/api/v1.0/users/")
+        return this.http.get<UserProfileRes>("http://13.233.161.206:3001/api/v1.0/users/",
+        {
+          headers
+        })
     }
 
     updateProfile(userprofiledata:ProfileDataRes){

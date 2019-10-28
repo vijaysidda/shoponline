@@ -31,7 +31,7 @@
       <a mat-list-item routerLink="/home&kitchen" class="item-link" (click)="onClose()">Home & Kitchen</a>
     </div>
     <div class="item">
-        <a mat-list-item  class="item-link" (click)="onClose()">Logout</a>
+        <a mat-list-item  class="item-link"  (click)="onClose()" (click)="onLogout()" *ngIf="isAuthenticated">Logout</a>
       </div>
   </div>
 </mat-nav-list>

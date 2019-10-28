@@ -35,6 +35,10 @@ export class AuthService{
     user = new BehaviorSubject<User>(null);
     private tokenExpirationTimer:any;
 
+    public getToken(): string {
+      return localStorage.getItem('token');
+    }
+
     constructor(private http:HttpClient,private router:Router){}
     userLogin(email:string, password:string)
     {
@@ -146,4 +150,15 @@ export class AuthService{
         localStorage.setItem('userData',JSON.stringify(user));
         localStorage.setItem('token', user.token);
       }
+
+      //--------------------------******---------------------------//
+
+    
+      // public isAuthenticated(): boolean {
+      //   // get the token
+      //   const token = this.getToken();
+      //   // return a boolean reflecting 
+      //   // whether or not the token is expired
+      //   return tokenNotExpired(token);
+      // }
 }
